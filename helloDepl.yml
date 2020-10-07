@@ -5,12 +5,12 @@ metadata:
 spec:
   selector:
     matchLabels:
-      run: hello
+      app: hello
   replicas: 2
   template:
     metadata:
       labels:
-        run: hello
+        app: hello
     spec:
       containers:
       - name: hello-pod
