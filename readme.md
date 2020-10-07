@@ -16,6 +16,6 @@ kubectl expose deployment hello-server --type=LoadBalancer --port 8080
 
 kubectl get service
 
-*curl/wget check hello service http:http://XX.XX.XX.XX:8080/
+*curl/wget check hello service http://XX.XX.XX.XX:8080/
 
 gcloud container clusters delete [CLUSTER-NAME]
