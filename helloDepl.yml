@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-depl
+spec:
+  selector:
+    matchLabels:
+      run: hello
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        run: hello
+    spec:
+      containers:
+      - name: hello-pod
+        image: gcr.io/google-samples/hello-app:1.0
+        ports:
+        - containerPort: 80
