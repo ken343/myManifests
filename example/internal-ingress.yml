@@ -1,0 +1,12 @@
+# internal-ingress.yaml
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: ilb-ingress
+  namespace: default
+  annotations:
+    kubernetes.io/ingress.class: "gce-internal"
+spec:
+  backend:
+    serviceName: hostname
+    servicePort: 80

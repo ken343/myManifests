@@ -1,0 +1,17 @@
+# web-service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: hostname
+  namespace: default
+  annotations:
+    cloud.google.com/neg: '{"ingress": true}'
+spec:
+  ports:
+  - name: host1
+    port: 80
+    protocol: TCP
+    targetPort: 9376
+  selector:
+    app: hostname
+  type: NodePort
