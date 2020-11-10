@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hello-depl
+  name: hellosign-api-dep
 spec:
   selector:
     matchLabels:
-      app: hello
+      app: hellosign-api-pod
   replicas: 2
   template:
     metadata:
       labels:
-        app: hello
+        app: hellosign-api-pod
     spec:
       containers:
       - name: hello-pod
-        image: gcr.io/google-samples/hello-app:1.0
+        image: gcr.io/dealwire-dev-studio-001/hellosign-api
         ports:
         - containerPort: 80

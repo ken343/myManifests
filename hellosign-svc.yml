@@ -2,14 +2,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-    name: hello-svc
-    annotations:
-      cloud.google.com/neg: '{"ingress": true}'
+    name: hellosign-api-svc
 spec:
-    type: ClusterIP
+    type: LoadBalancer
     selector:
-        app: hello
+        app: hellosign-api-pod
     ports:
       - protocol: TCP
-        port: 9080
+        port: 80
         targetPort: 80
